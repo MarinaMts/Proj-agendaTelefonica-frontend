@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^1.2.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "name": "proj-agendatelefonica-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinaMts/Proj-agendaTelefonica-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarinaMts/Proj-agendaTelefonica-frontend/issues"
+  },
+  "homepage": "https://github.com/MarinaMts/Proj-agendaTelefonica-frontend#readme",
+  "description": ""
+}

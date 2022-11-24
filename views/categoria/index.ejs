@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs')  %>
+
+<title>CADASTRO DE CATEGORIAS - NAO SEI O NOME</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card mt-2">
+            <div class="card-header">CADASTRO DE CATEGORIAS</div>
+        </div>
+
+        <div class="card-body">
+            <form action="http://localhost:3000/inserirCategoria" method="post">
+                <label for="">CATEGORIA</label>
+                <input type="text" class="form-control" 
+                        name="NOME_CATEGORIA" id="NOME_CATEGORIA"
+                        placeholder="DIGITE UMA CATEGORIA">
+                <button class="btn btn-success mt-2">CADASTRAR</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<%- include('../partials/footer.ejs')  %>

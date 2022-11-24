@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs')  %>
+
+<title>EDIÇÃO DE CATEGORIAS - NAO SEI O NOME</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card mt-2">
+            <div class="card-header">EDIÇÃO DE CATEGORIAS</div>
+        </div>
+
+        <div class="card-body">
+            <form action="http://localhost:3001/alterarCategoria" method="post">
+                <label for="">CATEGORIA</label>
+                <input
+                    type="hidden"
+                    name="id" id="id"
+                    value="<%= categoria.id %>"/>
+                <input type="text" class="form-control" 
+                        name="NOME_CATEGORIA" id="NOME_CATEGORIA"
+                        placeholder="DIGITE UMA CATEGORIA"
+                        value="<%= categoria.NOME_CATEGORIA %>">
+                <button class="btn btn-success mt-2">EDITAR</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<%- include('../partials/footer.ejs')  %>
