@@ -398,6 +398,13 @@
   }
   
   .display-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family:fantasy;
+    text-shadow: 3px 3px 3px #363636,
+    4px 4px 3px #363636; 
     font-size: 6rem;
     font-weight: 300;
     line-height: 1.2;
@@ -553,7 +560,7 @@
     margin-right: auto;
     margin-left: auto;
   }
-  
+
   @media (min-width: 576px) {
     .container {
       max-width: 540px;
@@ -575,6 +582,12 @@
   @media (min-width: 1200px) {
     .container {
       max-width: 1140px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .container{
+      max-width: 1600px;
     }
   }
   
@@ -1834,8 +1847,8 @@
   }
   
   .form-control:focus {
-    color: #495057;
-    background-color: #fff;
+    color: #EEEEEE;
+    background-color: #363636;
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
@@ -2638,6 +2651,7 @@
   }
   
   .btn-outline-secondary {
+    margin-left: 40%;
     color: #6c757d;
     background-color: transparent;
     background-image: none;
@@ -2994,10 +3008,10 @@
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
     font-size: 1rem;
-    color: #212529;
+    color: white;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: #343a40;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
@@ -3120,17 +3134,17 @@
     padding: 0.25rem 1.5rem;
     clear: both;
     font-weight: 400;
-    color: #212529;
+    color: white;
     text-align: inherit;
     white-space: nowrap;
-    background-color: transparent;
+    background-color: #343a40;
     border: 0;
   }
   
   .dropdown-item:hover, .dropdown-item:focus {
-    color: #16181b;
+    color: #eeeeee;
     text-decoration: none;
-    background-color: #f8f9fa;
+    background-color: #363636;
   }
   
   .dropdown-item.active, .dropdown-item:active {
@@ -4371,11 +4385,12 @@
     position: relative;
     display: -ms-flexbox;
     display: flex;
+    margin: 0 3rem;
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #363636;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
@@ -4399,7 +4414,8 @@
   .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem;
+    padding: 1.25rem 0;
+    margin:0 3rem;
   }
   
   .card-title {
