@@ -1,0 +1,62 @@
+<%- include('../partials/header.ejs')  %>
+
+<title>CADASTRO DE CONTATOS</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card mt-2">
+            <div class="card-header">CADASTRO DE CONTATOS</div>
+        </div>
+
+        <form action="http://localhost:3000/inserirContato" method="post">
+            <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="NOME_CONTATO">Nome</label>
+                                <input type="text" class="form-control" 
+                                name="NOME_CONTATO" id="NOME_CONTATO"
+                                placeholder="DIGITE UM NOME">
+            </div>
+            <div class="form-group col-md-6">
+                                <label for="TEL_CONTATO">Telefone</label>
+                        <input type="text" class="form-control" 
+                                name="TEL_CONTATO" id="TEL_CONTATO"
+                                placeholder="DIGITE UM NUMERO">
+            </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="EMAIL_CONTATO">EMAIL</label>
+                <input type="text" class="form-control" 
+                        name="EMAIL_CONTATO" id="EMAIL_CONTATO"
+                        placeholder="DIGITE UM EMAIL">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="APELIDO">Apelido</label>
+                <input type="text" class="form-control" 
+                        name="APELIDO" id="APELIDO"
+                        placeholder="DIGITE O APELIDO">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Categoria</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>...Escolher</option>
+                    <% categorias.forEach(categoria=>{      %>
+                        <option href = "<%= categoria.id %>"
+                        class="form-check-input" type="checkbox"
+                        name="tb_categoriaId" id="tb_categoriaId"
+                        value="<%= categoria.id %>"><label for="tb_categoriaId"><%= categoria.NOME_CATEGORIA %></label>
+                        </option>
+                    <%  }); %>
+                </select>
+            </div>
+            </div>
+            <button class="btn btn-success mt-2">CADASTRAR</button>
+        </form>
+    </div>
+</body>
+
+<%- include('../partials/footer.ejs')  %>

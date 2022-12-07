@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs')  %>
+    <title>LISTAGEM DE CONTATOS</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partials/menu.ejs')  %>
+        <div class="card mt-2">
+            <div class="card-header">LISTAGEM DE CONTATOS</div>
+        </div>
+        <%
+            contatos.forEach(contato=>{
+        %>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <%= contato.NOME_CONTATO%>
+                </div>
+                <a href="/formEdicaoContatos/<%= contato.id %>" class="btn btn-success mt-1">EDITAR</a>
+                <a href="#" class="btn btn-danger mt-1">EXCLUIR</a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+
+<%- include('../partials/footer.ejs')  %>
