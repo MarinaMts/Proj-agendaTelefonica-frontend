@@ -42,13 +42,21 @@
             </div>
             <div class="form-group col-md-4">
                 <label>Categoria</label>
-                <select class="form-select" aria-label="Default select example">
+                
+                <select 
+                class="form-select" 
+                aria-label="Default select example"
+                name="ID_CATEGORIA_CONTATO"
+                id="ID_CATEGORIA_CONTATO">
+
                     <option selected>...Escolher</option>
                     <% categorias.forEach(categoria=>{      %>
-                        <option href = "<%= categoria.id %>"
-                        class="form-check-input" type="checkbox"
-                        name="tb_categoriaId" id="tb_categoriaId"
-                        value="<%= categoria.id %>"><label for="tb_categoriaId"><%= categoria.NOME_CATEGORIA %></label>
+                        <option 
+                        class="form-check-input" 
+                        name="tb_categoriaId" 
+                        id="tb_categoriaId"
+                        value="<%= categoria.id %>">
+                        <label for="tb_categoriaId"><%= categoria.NOME_CATEGORIA %></label>
                         </option>
                     <%  }); %>
                 </select>

@@ -26,7 +26,16 @@ app.get('/cadastroContatos', (req, res)=>{
             let categorias = response.data;
             res.render('contato/index',{categorias})
         })
-})
+});
+
+app.get('/formEdicaoContatos/:id', (req, res)=>{
+    const urlListagemCategoria = 'http://localhost:3000/listarCategoria';
+    axios.get(urlListagemCategoria)
+        .then((response)=>{
+            let categorias = response.data;
+            res.render('contato/editarContato',{categorias})
+        })
+});
 
 app.get('/listagemCategorias', (req, res)=>{
     
@@ -42,7 +51,9 @@ app.get('/listagemCategorias', (req, res)=>{
     app.get('/formEdicaoCategorias/:id', (req, res)=>{
         
         let {id} = req.params;
+        // console.log(id);
         const urlListagemCategoria = `http://localhost:3000/listarCategoria/${id}`;
+        console.log(urlListagemCategoria);
         axios.get(urlListagemCategoria)
         .then(
             (response)=>{
@@ -61,43 +72,70 @@ app.get('/listagemCategorias', (req, res)=>{
         )
     });
 
+    app.get('/excluirCategoria/:id', (req, res)=>{
+        let {id} = req.params;
+    
+        const urlExcluirCategoria = `http://localhost:3000/excluirCategoria/${id}`;
+        axios.delete(urlExcluirCategoria)
+        .then((response)=>{
+            const urlListarCategoria = 'http://localhost:3000/listarCategoria';
+            axios.get(urlListarCategoria)
+            .then((response)=>{
+                let categorias = response.data;
+                res.render('categoria/listagemCategoria', {categorias});
+            });
+        })
+    });
+
 
 //Contatos
     app.get('/cadastroContatos', (req, res)=>{
         res.render('contato/index');
     });
     
-    app.get('/listagemContatos', (req, res)=>{
-        
-        const urlListagemContato = 'http://localhost:3000/listarContato';
-        axios.get(urlListagemContato)
-            .then(
-                (response)=>{
+app.get('/listagemContatos', (req, res)=>{
+    const urlListagemContato = 'http://localhost:3000/listarContato';
+    axios.get(urlListagemContato)
+        .then(
+            (response)=>{
+                let contatos = response.data;
+                res.render('contato/listagemContato', {contatos});
+        }); 
+});
+    
+app.get('/formEdicaoContatos/:id', (req, res)=>{
+    let {id} = req.params;
+    const urlListagemContato = `http://localhost:3000/listarContato/${id}`;
+    axios.get(urlListagemContato)
+        .then(
+            (response)=>{
+                let contato = response.data;
+                res.render('contato/editarContato', {contato});
+            }
+        )
+});
+
+app.post('/alterarContato', (req, res)=>{
+    const urlAlterarContato = 'http://localhost:3000/alterarContato';
+    console.log(req.body);
+    axios.put(urlAlterarContato, req.body)
+        .then(
+            res.send('ALTERADO!')
+        )
+});
+
+app.get('/excluirContato/:id', (req, res)=>{
+    let {id} = req.params;
+    const urlExcluirContato = `http://localhost:3000/excluirContato/${id}`;
+        axios.delete(urlExcluirContato)
+            .then((response)=>{
+                const urlListarContato = 'http://localhost:3000/listarContato';
+                axios.get(urlListarContato)
+                .then((response)=>{
                     let contatos = response.data;
                     res.render('contato/listagemContato', {contatos});
-            }); 
-        });
-    
-        app.get('/formEdicaoContatos/:id', (req, res)=>{
-            
-            let {id} = req.params;
-            const urlListagemContato = `http://localhost:3000/listarContato/${id}`;
-            axios.get(urlListagemContato)
-            .then(
-                (response)=>{
-                    let contato = response.data;
-                    res.render('contato/editarContato', {contato});
-                }
-            )
-        });
-    
-        app.post('/alterarContato', (req, res)=>{
-            const urlAlterarContato = 'http://localhost:3000/alterarContato';
-            console.log(req.body);
-            axios.put(urlAlterarContato, req.body)
-            .then(
-                res.send('ALTERADO!')
-            )
+                });
+            })
         });
 
 

@@ -13,10 +13,14 @@
         %>
             <div class="card mt-2">
                 <div class="card-body">
-                    <%= contato.NOME_CONTATO%>
+                    <h3><%= contato.APELIDO%></h3>
+                    <%= contato.NOME_CONTATO%> <br>
+                    <span>Telefone: </span><%= contato.TEL_CONTATO%> <br>
+                    <span>EMAIL: </span><%= contato.EMAIL_CONTATO%> <br>
+                    <span>Categoria: </span><%= contato.ID_CATEGORIA_CONTATO%> 
                 </div>
                 <a href="/formEdicaoContatos/<%= contato.id %>" class="btn btn-success mt-1">EDITAR</a>
-                <a href="#" class="btn btn-danger mt-1">EXCLUIR</a>
+                <a href="/excluirContato/<%= contato.id %>" class="btn btn-danger mt-1">EXCLUIR</a>
             </div>
         <% }) %>
     </div>

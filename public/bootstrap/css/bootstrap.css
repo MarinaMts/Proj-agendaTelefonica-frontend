@@ -1855,33 +1855,39 @@
   }
   
   .form-control::-webkit-input-placeholder {
-    color: #6c757d;
+    color: #A7A6A6;
+    background-color: #363636;
     opacity: 1;
   }
   
   .form-control::-moz-placeholder {
-    color: #6c757d;
+    color: #A7A6A6;
+    background-color: #363636;
     opacity: 1;
   }
   
   .form-control:-ms-input-placeholder {
-    color: #6c757d;
+    color: #A7A6A6;
+    background-color: #363636;
     opacity: 1;
   }
   
   .form-control::-ms-input-placeholder {
-    color: #6c757d;
+    color: #A7A6A6;
+    background-color: #363636;
     opacity: 1;
   }
   
   .form-control::placeholder {
-    color: #6c757d;
+    color: #A7A6A6;
+    background-color: #363636;
     opacity: 1;
   }
   
   .form-control:disabled, .form-control[readonly] {
+    color: #A7A6A6;
     background-color: #363636;
-    opacity: 1;
+    opacity: 1; 
   }
   
   select.form-control:focus::-ms-value {
